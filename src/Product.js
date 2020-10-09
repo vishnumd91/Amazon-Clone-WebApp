@@ -1,7 +1,23 @@
 import React from 'react';
 import './Product.css';
+import { useStateValue } from './StateProvider';
 
-function Product({ title, price, rating, image }) {
+function Product({ id, title, price, rating, image }) {
+    // eslint-disable-next-line no-empty-pattern
+    const [ {}, dispatch ] = useStateValue();
+
+    const addToBasket = () => {
+        dispatch( {
+            type: 'ADD_TO_BASKET',
+            item: {
+                id,
+                title,
+                price,
+                rating,
+                image,
+            },
+        });
+    };
     return (
         <div className = 'product'>
             <div className = 'product__info'>
@@ -20,7 +36,7 @@ function Product({ title, price, rating, image }) {
             </div>
         </div>
             <img src = {image} alt = ''></img>
-            <button>Add to Basket</button>
+            <button onClick = { addToBasket }>Add to Basket</button>
         </div>
     )
 }
