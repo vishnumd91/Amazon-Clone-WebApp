@@ -3,6 +3,9 @@ export const initialState = {
     user: null,
 }
 
+// Selector
+export const getBasketTotal = (basket) => basket?.reduce( (amount, item) => item.price + amount, 0);
+
 const reducer = (state, action) => { 
     // In the above function state should be passed first,then action,otherwise reducer will not know the action is taking place for a particular state change.
     // console.log('Action reaction =>', action);
