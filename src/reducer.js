@@ -5,7 +5,7 @@ export const initialState = {
 
 const reducer = (state, action) => { 
     // In the above function state should be passed first,then action,otherwise reducer will not know the action is taking place for a particular state change.
-    console.log('Action reaction =>', action);
+    // console.log('Action reaction =>', action);
     switch(action.type) {
         case 'ADD_TO_BASKET':
             // Logic for adding items to the basket
@@ -18,8 +18,10 @@ const reducer = (state, action) => {
             };
 
         case 'REMOVE_FROM_BASKET':
+            // Logic for removing items from the basket
             let newBasket = [...state.basket]
 
+            // Checking for index and assignd checked index to a variable named inex.
             const index = state.basket.findIndex( (basketItem) => basketItem.id === action.id)
 
             if (index >= 0){
