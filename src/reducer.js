@@ -17,6 +17,27 @@ const reducer = (state, action) => {
                 ]
             };
 
+        case 'REMOVE_FROM_BASKET':
+            // Logic for removing items from the basket
+            let newBasket = [...state.basket]
+
+            // Checking for index and assignd checked index to a variable named inex.
+            const index = state.basket.findIndex( (basketItem) => basketItem.id === action.id)
+
+            if (index >= 0){
+                // item exists,so splice or remove the index by 1.
+                newBasket.splice(index, 1);
+            }
+            else{
+                // eslint-disable-next-line no-template-curly-in-string
+                console.warn('Cannot remove product (id: ${action.id}) as it iss not in the basket');
+            }
+            
+            return {
+                ...state,
+                basket: newBasket
+            }
+
         default:
             // setting state to current state when no cases are working
             return state;
