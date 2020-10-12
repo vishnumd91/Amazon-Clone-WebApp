@@ -30,3 +30,13 @@
     font-size: 17px;
     font-weight: 800;
 }
+
+@media screen and (max-width: 380px) {
+    .checkoutProduct {
+        display: flex;
+        flex-direction: column;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+}
