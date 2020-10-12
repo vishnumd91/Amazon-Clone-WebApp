@@ -41,6 +41,12 @@ const reducer = (state, action) => {
                 basket: newBasket
             }
 
+        case 'SET_USER':
+            return {
+                ...state,
+                user: action.user,
+            }
+
         default:
             // setting state to current state when no cases are working
             return state;
