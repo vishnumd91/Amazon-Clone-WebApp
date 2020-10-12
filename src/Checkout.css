@@ -15,4 +15,13 @@
     padding: 10px;
     border-bottom: 1px solid lightgray;
   }
+
+  @media screen and (max-width: 380px) {
+    .checkout {
+      display: flex;
+      padding: 20px;
+      background-color: white;
+      height: max-content;
+    }
+  }
   
