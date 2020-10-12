@@ -13,26 +13,26 @@ function Login() {
     const login = (event) => {
         event.preventDefault(); // will stop the refresh when clicking the login button
         // Logic for login
-        auth
-            .signInWithEmailAndPassword(email, password)
-            .then(auth => {
-                // When logged in redirect to home page
-                history.push('/')
-            })
-            .catch(error => alert(error.message))
+        // auth
+        //     .signInWithEmailAndPassword(email, password)
+        //     .then(auth => {
+        //         // When logged in redirect to home page
+        //         history.push('/')
+        //     })
+        //     .catch(error => alert(error.message))
     }
     
 
     const register = (event) => {
         event.preventDefault(); // stops refresh on clicking register
         // logic for register
-        auth
-            .createUserWithEmailAndPassword(email, password)
-            .then(auth => {
-                // Redirect to home Page after creating the given e-mail and pasword
-                history.push('/')
-            })
-            .catch(error => alert(error.message))
+        // auth
+        //     .createUserWithEmailAndPassword(email, password)
+        //     .then(auth => {
+        //         // Redirect to home Page after creating the given e-mail and pasword
+        //         history.push('/')
+        //     })
+        //     .catch(error => alert(error.message))
     }
 
     return (
