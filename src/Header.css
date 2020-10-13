@@ -72,7 +72,7 @@
     text-decoration: none;
   }
 
-  @media screen and (max-width: 380px) {
+  @media screen and (max-width: 600px) {
     .header {
       height: 60px;
       display: flex;
@@ -88,7 +88,7 @@
     
   }
 
-  @media screen and (max-width: 380px) {
+  @media screen and (max-width: 600px) {
     .header__nav {
       display: flex;
       justify-content: space-between;

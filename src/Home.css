@@ -31,7 +31,7 @@
       width: 100%;
     }
   } */
-  @media screen and (max-width: 380px) {
+  @media screen and (max-width: 600px) {
     .home__row {
       display: flex;
       flex-direction: column;
@@ -44,7 +44,7 @@
   
   }
 
-  @media screen and (max-width: 380px) {
+  @media screen and (max-width: 600px) {
     .home {
       /* display: flex; */
       /* justify-content: center; */
@@ -56,7 +56,7 @@
     
   }
 
-  @media screen and (max-width: 380px) {
+  @media screen and (max-width: 600px) {
     .home__image {
       width: 65vh;
       z-index: -1;
