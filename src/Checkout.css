@@ -16,7 +16,7 @@
     border-bottom: 1px solid lightgray;
   }
 
-  @media screen and (max-width: 380px) {
+  @media screen and (max-width: 600px) {
     .checkout {
       display: flex;
       padding: 20px;
