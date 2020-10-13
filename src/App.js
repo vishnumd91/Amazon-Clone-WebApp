@@ -6,37 +6,37 @@ import Home from './Home';
 import Checkout from './Checkout';
 import Login from './Login';
 import { useStateValue } from './StateProvider';
-import { auth } from 'firebase';
+import { auth } from './firebase';
 
 function App() {
-  const [ {}, dispatch] = useStateValue();
+  const [ {user}, dispatch] = useStateValue();
 
   // useEffect Hook is used when we need to run some operation based on a given condition
-  // const unsubscribe = useEffect(() => {
+  const unsubscribe = useEffect(() => {
 
-  //   auth.onAuthStateChanged((authUser) => {
+    auth.onAuthStateChanged((authUser) => {
 
-  //     if (authUser) {
-  //       // User is logged in
-  //       dispatch( {
-  //         type: 'SET_USER',
-  //         user: authUser,
-  //       })
-  //     }
-  //     else {
-  //       // User is logged out
-  //       dispatch( {
-  //         type: 'SET_USER',
-  //         user: null,
-  //       })
-  //     }
-  //   })
+      if (authUser) {
+        // User is logged in
+        dispatch( {
+          type: 'SET_USER',
+          user: authUser,
+        })
+      }
+      else {
+        // User is logged out
+        dispatch( {
+          type: 'SET_USER',
+          user: null,
+        })
+      }
+    })
 
-  //   return () => {
-  //     // cleanup
-  //     unsubscribe();
-  //   }
-  // }, [])
+    return () => {
+      // cleanup
+      unsubscribe();
+    }
+  }, [])
   // console.log('User =>', user);
 
   return (

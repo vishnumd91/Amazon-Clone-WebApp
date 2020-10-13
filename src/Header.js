@@ -14,6 +14,8 @@ function Header() {
         auth.signOut();
       }
     }
+       
+
     // console.log('Basket =>', basket)
     return (
         <nav className = 'header'>
@@ -34,7 +36,7 @@ function Header() {
             <div className = 'header__nav'>
             <Link to = {!user && '/login'} className = 'header__link'>
                 <div onClick = { handleAuthenticaton } className = 'header__option'>
-                    <span className = 'optionLineOne'>Hello {!user ? 'Guest' : user.email}</span>
+                    <span className = 'optionLineOne'>Hello {!user ? 'Guest' : user.email.split('@')[0]}</span>
                     <span className = 'optionLineTwo'>{user ? 'Sign Out' : 'Sign In'}</span>
                 </div>
                
